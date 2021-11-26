@@ -1,0 +1,53 @@
+figure("Name","Nutriments en fonction du sol")
+ValPeat = values(index(:,2)=='Peat',:);
+ValSoil = values(index(:,2)=='Soil',:);
+
+subplot(1,2,1)
+plot(ValPeat(:,9),ValPeat(:,11),'+','color','red')
+hold on
+plot(ValSoil(:,9),ValSoil(:,11),'+','color','blue')
+title("Plante")
+legend('Peat','Soil')
+xlabel('NO3')
+ylabel('PO4')
+
+subplot(1,2,2)
+plot(ValPeat(:,10),ValPeat(:,12),'+','color','red')
+hold on
+plot(ValSoil(:,10),ValSoil(:,12),'+','color','blue')
+title("Sol")
+legend('Peat','Soil')
+xlabel('NO3')
+ylabel('PO4')
+
+figure("name", 'Nutriments en fonction du traitement')
+ValDro = values(index(:,3)=='Drought',:);
+ValChar = values(index(:,3)=='Char',:);
+ValCont = values(index(:,3)=='Cont',:);
+ValN = values(index(:,3)=='N',:);
+
+subplot(1,2,1)
+plot(ValDro(:,9),ValDro(:,12),'+','color','red')
+hold on
+plot(ValN(:,9),ValN(:,12),'+','color','blue')
+hold on
+plot(ValChar(:,9),ValChar(:,12),'+','color','black')
+hold on
+plot(ValCont(:,9),ValCont(:,12),'+','color','green')
+title("Plante")
+legend('Drought','N','Char','Cont')
+xlabel('NO3')
+ylabel('PO4')
+
+subplot(1,2,2)
+plot(ValDro(:,10),ValDro(:,11),'+','color','red')
+hold on
+plot(ValN(:,10),ValN(:,11),'+','color','blue')
+hold on
+plot(ValChar(:,10),ValChar(:,11),'+','color','black')
+hold on
+plot(ValCont(:,10),ValCont(:,11),'+','color','green')
+title("Sol")
+legend('Drought','N','Char','Cont')
+xlabel('NO3')
+ylabel('PO4')
